@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Meu primeiro Forumulário.</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Dados Pesoais do Cliente</h1>
+        <!<!-- no caso java web passa a url do servlet -->
+        <form action="processaDadosCliente" method="GET">
+            
+            <label>Nome: </label>
+            <input type="text" size="20" name="nome" />
+            <br />
+            
+            <label>Sobrenome: </label>
+            <input type="text" size="20" name="sobrenome" />
+            <br />
+            
+            <label>CPF: </label>
+            <input type="text" size="15" name="cpf" placeholder="000.000.000-00"/>
+            <br />
+            
+            <label>Data: </label>
+            <input type="date" size="10" name="dataNascimento" />
+            <br />
+            
+            <label>Sexo: </label>
+            <input type="radio" name="sexo" value="M" />
+            <input type="radio" name="sexo" value="F" />
+            <br />
+            
+            <label>Observações: </label>
+            <br />
+            <textarea cols="40" rows="10" name="observacoes"></textarea>
+            <br />
+            
+            <label>Email: </label>
+            <input type="email" name="email" size="20"/>
+            <br />
+            
+            <label>Logradouro: </label>
+            <input type="text" name="logradouro" size="20"/>
+            <br />
+            
+            <label>Cidade: </label>
+            <input type="text" name="cidade" size="20"/>
+            <br />
+            
+            <label>Cep: </label>
+            <input type="text" name="endereco" size="20"/>
+            <br />
+            
+            <label>Numero: </label>
+            <input type="text" name="numeroEndereco" size="20"/>
+            <br />
+            
+            <label>Complemento: </label>
+            <input type="text" name="complemento" size="20"/>
+            <br />
+            
+            <label>Possui filhos: </label>
+            <input type="radio" name="filhos" value="S" /> Sim
+            <input type="radio" name="filhos" value="N" /> Não
+            <br />
+            
+            <br />
+            <input type="submit" value="Enviar"/>
+        </form>
+    </body>
+</html>
+
+

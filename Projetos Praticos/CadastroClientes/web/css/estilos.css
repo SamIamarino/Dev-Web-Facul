@@ -1,0 +1,44 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 27 de out. de 2024, 15:03:25
+    Author     : Samuel Iamarino
+*/
+
+
+body {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    background-color: #FFFFFF;
+}
+
+a {
+    color: #0484AE;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.tabelaListagem {
+    background: #000000;
+}
+
+.tabelaListagem th {
+    background: #EEEEEE;
+    padding: 5px;
+}
+
+.tabelaListagem td {
+    background: #FFFFFF;
+    padding: 5px;
+}
+
+.alinharDireita {
+    text-align: right;
+}

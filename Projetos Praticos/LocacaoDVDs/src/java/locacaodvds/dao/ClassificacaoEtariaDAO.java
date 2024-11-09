@@ -103,7 +103,7 @@ public class ClassificacaoEtariaDAO extends DAO<ClassificacaoEtaria>{
         
         ResultSet set = statement.executeQuery();
         
-        while(set.next()){
+        if(set.next()){
             
             classificacao = new ClassificacaoEtaria();
             classificacao.setIdClassificacao(set.getInt("id") );

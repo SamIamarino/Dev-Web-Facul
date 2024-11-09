@@ -102,7 +102,7 @@ public class GeneroDAO extends DAO<Genero>{
         
         ResultSet set = statement.executeQuery();
         
-        while(set.next()){
+        if(set.next()){
             
             genero = new Genero();
             genero.setIdGenero( set.getInt("id") );

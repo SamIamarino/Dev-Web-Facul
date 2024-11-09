@@ -16,7 +16,7 @@ public class Dvd {
     private Ator atorCoadjuvante; //idAtor
     private Date dataLancamento; //Date sql pelo amor de Deus user o Date.valueOf() pra testar
     private Genero genero;
-    private ClassificacaoEtaria classificasao; //idClassificacao
+    private ClassificacaoEtaria classificacao; //idClassificacao
     private int dvdID;
     private int anoLancamento;
     private int duracaoMinutos;
@@ -77,12 +77,12 @@ public class Dvd {
         this.duracaoMinutos = duracaoMinutos;
     }
 
-    public ClassificacaoEtaria getClassificasao() {
-        return classificasao;
+    public ClassificacaoEtaria getClassificacao() {
+        return classificacao;
     }
 
-    public void setClassificasao(ClassificacaoEtaria classificasao) {
-        this.classificasao = classificasao;
+    public void setClassificacao(ClassificacaoEtaria classificacao) {
+        this.classificacao = classificacao;
     }
 
     public Genero getGenero() {

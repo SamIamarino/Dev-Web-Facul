@@ -19,13 +19,13 @@ public class TesteDAOGenero {
         Genero genero2 = new Genero();
         
         genero1.setIdGenero(4);
-        genero1.setDescricao("Descricao ");
+        genero1.setDescricao("Descricao pica pra krl");
         
       
         try{
             
             dao = new GeneroDAO();
-            dao.excluir(genero1);
+            dao.salvar(genero1);
             
             
         }catch(SQLException exception){

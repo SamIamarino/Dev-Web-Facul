@@ -108,7 +108,7 @@ public class AtorDAO extends DAO<Ator> {
         
         ResultSet set = statement.executeQuery();
         
-        while(set.next()){
+        if(set.next()){
             
             ator = new Ator();
             ator.setIdAtor(set.getInt("id"));

@@ -41,7 +41,7 @@
           <a href="#" class="link-button">Classificação Etária.</a>
         </div>
       </div>
-      <div class="main-container">
+      <div class="main-container scroll">
         <div class="header-container">
           <h1>Copias Cadastradas:</h1>
           <hr
@@ -54,13 +54,15 @@
         </div>
         <div class="header-body">
           <h3>Algumas cópias suas cadastradas:</h3>
-          <!-- faz um for com as Taglibs aq -->
-          <p>A seguir mostraremos suas principais copias cadastradas:</p>
+
+          <!-- <p>A seguir mostraremos suas principais copias cadastradas:</p> -->
           <a href="#" class="link-button">Star Wars 1</a>
           <a href="#" class="link-button">Star Wars 2</a>
           <a href="#" class="link-button">Star Wars 3</a>
           <a href="#" class="link-button">Star Wars 4</a>
-          <!-- até aq -->
+          <a href="#" class="link-button">Star Wars 4</a>
+          <a href="#" class="link-button">Star Wars 4</a>
+          <a href="#" class="link-button">Star Wars 4</a>
           <a href="#" class="link-button">Todas as Copias</a>
         </div>
       </div>

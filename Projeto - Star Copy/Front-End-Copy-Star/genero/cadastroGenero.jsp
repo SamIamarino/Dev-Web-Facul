@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Star Copy</title>
-    <link rel="stylesheet" href="atorStyle.css" />
+    <link rel="stylesheet" href="formularioStyle.css" />
   </head>
   <body>
     <header class="header">
@@ -26,7 +26,7 @@
     <main>
       <div class="main-container">
         <div class="header-container">
-          <h1>Cadastre seu Ator:</h1>
+          <h1>Cadastro Genero:</h1>
           <hr
             style="
               height: 10px;
@@ -39,14 +39,14 @@
           <form action="" method="post">
             <input type="hidden" name="inserir" />
 
-            <label>Nome: </label>
-            <input type="text" name="nomeAtor" class="form-input" />
-
-            <label>Sobrenome: </label>
-            <input type="text" name="sobrenomeAtor" class="form-input" />
-
-            <label>Data Estreia: </label>
-            <input type="date" name="dataEstreia" class="form-input" />
+            <label>Descrição: </label>
+            <!-- <input type="text" name="sobrenomeAtor" class="form-input" /> -->
+            <textarea
+              name="descricaoGenero"
+              id="descricaoGenero"
+              class="form-input"
+              rows="20"
+            ></textarea>
 
             <input type="submit" class="form-input-submit" value="Cadastrar" />
           </form>

@@ -26,7 +26,7 @@
     <main>
       <div class="main-container">
         <div class="header-container">
-          <h1>Cadastre seu Ator:</h1>
+          <h1>Editar Ator:</h1>
           <hr
             style="
               height: 10px;
@@ -48,7 +48,7 @@
             <label>Data Estreia: </label>
             <input type="date" name="dataEstreia" class="form-input" />
 
-            <input type="submit" class="form-input-submit" value="Cadastrar" />
+            <input type="submit" class="form-input-submit" value="Editar" />
           </form>
         </div>
       </div>

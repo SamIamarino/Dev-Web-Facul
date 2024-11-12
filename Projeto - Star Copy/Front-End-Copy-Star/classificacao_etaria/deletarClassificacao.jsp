@@ -1,7 +1,3 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%> <%@taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="cp" value="${pageContext.request.contextPath}" />
-
 <!DOCTYPE html>
 <html lang="en" id="main">
   <head>
@@ -30,7 +26,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <main>
       <div class="main-container">
         <div class="header-container">
-          <h1>Cadastro Genero:</h1>
+          <h1>Deletar Classificação:</h1>
           <hr
             style="
               height: 10px;
@@ -40,19 +36,20 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           />
         </div>
         <div class="header-body">
+          <!-- Colocar Servlet -->
           <form action="" method="post">
-            <input type="hidden" name="acao" value="inserir" />
+            <input type="hidden" name="acao" value="deletar" />
+            <input type="hidden" name="id" />
 
             <label>Descrição: </label>
-            <!-- <input type="text" name="sobrenomeAtor" class="form-input" /> -->
             <textarea
-              name="descricaoGenero"
-              id="descricaoGenero"
+              name="editarGenero"
+              id="editarGenero"
               class="form-input"
-              rows="20"
+              readonly
             ></textarea>
 
-            <input type="submit" class="form-input-submit" value="Cadastrar" />
+            <input type="submit" class="form-input-submit" value="Editar" />
           </form>
         </div>
       </div>

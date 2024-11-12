@@ -1,3 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%> <%@taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="cp" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en" id="main">
   <head>
@@ -37,13 +40,13 @@
         </div>
         <div class="header-body">
           <form action="" method="post">
-            <input type="hidden" name="inserir" />
+            <input type="hidden" name="acao" value="inserir" />
 
             <label>Nome: </label>
             <input type="text" name="nomeAtor" class="form-input" />
 
             <label>Sobrenome: </label>
-            <input type="text" name="sobrenomeAtor" class="form-input" />
+            <input type="text" name="sobreomeAtor" class="form-input" />
 
             <label>Data Estreia: </label>
             <input type="date" name="dataEstreia" class="form-input" />

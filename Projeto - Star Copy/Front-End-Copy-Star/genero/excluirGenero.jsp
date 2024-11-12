@@ -30,7 +30,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <main>
       <div class="main-container">
         <div class="header-container">
-          <h1>Cadastro Genero:</h1>
+          <h1>Editar Genero:</h1>
           <hr
             style="
               height: 10px;
@@ -41,18 +41,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
         <div class="header-body">
           <form action="" method="post">
-            <input type="hidden" name="acao" value="inserir" />
+            <input type="hidden" name="acao" value="deletar" />
 
             <label>Descrição: </label>
-            <!-- <input type="text" name="sobrenomeAtor" class="form-input" /> -->
             <textarea
-              name="descricaoGenero"
-              id="descricaoGenero"
+              name="editarGenero"
+              id="editarGenero"
               class="form-input"
-              rows="20"
             ></textarea>
 
-            <input type="submit" class="form-input-submit" value="Cadastrar" />
+            <input type="submit" class="form-input-submit" value="Editar" />
           </form>
         </div>
       </div>

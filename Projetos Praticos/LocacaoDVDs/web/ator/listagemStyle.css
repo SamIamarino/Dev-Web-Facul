@@ -16,7 +16,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
-  background-image: url("./assets/backgournd-img.jpg");
+  background-image: url("../assets/backgournd-img.jpg");
 }
 
 li a {

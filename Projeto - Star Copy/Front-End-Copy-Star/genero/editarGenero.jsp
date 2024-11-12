@@ -1,3 +1,7 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%> <%@taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="cp" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html lang="en" id="main">
   <head>
@@ -37,7 +41,7 @@
         </div>
         <div class="header-body">
           <form action="" method="post">
-            <input type="hidden" name="inserir" />
+            <input type="hidden" name="acao" value="editar" />
 
             <label>Descrição: </label>
             <textarea

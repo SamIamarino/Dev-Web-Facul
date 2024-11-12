@@ -16,7 +16,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
-  background-image: url("./assets/backgournd-img.jpg");
+  background-image: url("../assets/backgournd-img.jpg");
 }
 
 li a {
@@ -83,7 +83,6 @@ ul li {
 }
 
 main {
-  justify-content: center;
   display: flex;
   justify-content: space-around;
   margin: 12.12vh 35.33vh;
@@ -102,13 +101,6 @@ main {
   border: 2px solid black;
 }
 
-/* Enables scrolling */
-.scroll {
-  height: 491.69px;
-  overflow-y: scroll;
-  scrollbar-width: none;
-}
-
 .header-container {
   text-align: center;
   padding-top: 1px;
@@ -117,30 +109,17 @@ main {
 .header-container h1 {
   text-shadow: 1px 1px 1px #ffe5e54d, 2px 2px 1px #ffe5e54d;
 }
+
 .header-body {
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.link-button {
-  font-family: "Oxanium", sans-serif;
-  font-weight: 900;
-  display: block;
-  background-color: #262626;
-  color: black;
-  padding: 10px;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: 0.3s;
-  margin-top: 10px;
+.header-body form {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
 }
-.link-button:hover {
-  color: #f2f2f2;
-  background-color: #363636;
-  box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.336);
-}
-
-/* Table css */
 
 /*
 #F2F2F2 --> Branco StormStrooper
@@ -150,37 +129,46 @@ main {
 #0D0D0D --> Preto
 */
 
-.tabelaListagem {
-  border-radius: 10px;
-  background: #595959;
-  color: black;
-}
-.tabelaListagem thead {
-  /* background: #ffffff; */
-  border-bottom: 1px solid black;
-}
-
-.tabelaListagem th {
+.form-input {
+  font-family: "Oxanium", sans-serif;
+  font-weight: 1000;
+  font-size: large;
+  height: 35px;
+  border-radius: 8px;
+  background-color: #a6a6a6;
+  opacity: 0.8;
+  /* border: 2px solid #262626; */
   border: none;
-  color: black;
-  /* background: #292727; */
-  padding: 5px;
-}
-
-.tabelaListagem td {
-  border: none;
-  /* background: #ffff; */
-  /* border-top: 1px solid black; */
-  padding: 5px;
-}
-
-.tabelaListagem td a {
-  color: white;
-  text-decoration: none;
+  margin-top: 4px;
+  margin-bottom: 25px;
   transition: 0.3s;
 }
-.tabelaListagem td a:hover {
-  color: #262626;
+
+.form-input:focus {
+  color: #f2f2f2;
+  background-color: #262626;
+  outline-color: rgba(212, 23, 23, 0.027);
+  box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.336);
+  transition: 0.3s;
+  transition-property: box-shadow;
+}
+
+.form-input-submit {
+  font-family: "Oxanium", sans-serif;
+  font-weight: 1000;
+  height: 35px;
+  border: none;
+  border-radius: 8px;
+  background-color: #262626;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.form-input-submit:hover {
+  color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  background-color: #363636;
+  box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.336);
 }
 
 @media (max-width: 1300px) {
@@ -188,26 +176,5 @@ main {
     display: flex;
     justify-content: center;
     gap: 40px;
-  }
-
-  main {
-    width: 400px;
-    margin: auto;
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 780px) {
-  /* Estilos para telas menores que 480px */
-  ul {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-  }
-  main {
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    flex-direction: column;
   }
 }

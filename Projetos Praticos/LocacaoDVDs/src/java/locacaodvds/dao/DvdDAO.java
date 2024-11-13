@@ -63,7 +63,7 @@ public class DvdDAO extends DAO<Dvd>{
                        + " duracao_minutos = ?,"
                        + " classificacao_etaria_id = ?,"
                        + " genero_id = ?"
-                       + "WHERE id = ?; "
+                       + " WHERE id = ?;"
        );
        
        statement.setString(1, obj.getTitulo());

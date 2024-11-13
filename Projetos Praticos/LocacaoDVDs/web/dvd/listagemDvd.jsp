@@ -1,14 +1,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cp" value="${pageContext.request.contextPath}"/>
-<c:set var="prefixo" value="processaClassificacao?acao=preparar"/>
+<c:set var="prefixo" value="processaDvd?acao=preparar"/>
 <!DOCTYPE html>
 <html lang="en" id="main">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Star Copy</title>
-    <link rel="stylesheet" href="${cp}/genero/listagemStyle.css" />
+    <link rel="stylesheet" href="${cp}/ator/listagemStyle.css" />
   </head>
   <body>
     <header class="header">
@@ -31,31 +31,48 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Descrição</th>
+              <th>Titulo</th>
+              <th>Ator Principal</th>
+              <th>Ator Coadjuvante</th>
+              <th>Data Lancamento</th>
+              <th>Genero</th>
+              <th>Classificação Etaría</th>
+              <th>Ano Lançamento</th>
+              <th>Duração (Min)</th>
               <th>Alterar</th>
               <th>Excluir</th>
             </tr>
           </thead>
           <tbody>
-            
+
         <jsp:useBean
             id="servicos"
             scope="page"
-            class="locacaodvds.servicos.ClassificacaoServicos"
+            class="locacaodvds.servicos.DvdServicos"
         />
         
-        <c:forEach items="${servicos.todos}" var="classificacao">
+        
+        <c:forEach items="${servicos.todos}" var="dvd">
             
             <tr>
-              <td>${classificacao.idClassificacao}</td>
-              <td>${classificacao.descricao}</td>
+              <td>${dvd.dvdID}</td>
+              <td>${dvd.titulo}</td>
+              <td>${dvd.atorPrincipal.nome} ${dvd.atorPrincipal.sobrenome}</td>
+              <!-- Usar o formatter dps -->
+              <td>${dvd.atorCoadjuvante.nome} ${dvd.atorCoadjuvante.sobrenome}</td>
+              <td>${dvd.dataLancamento}</td>
+              <td>${dvd.genero.descricao}</td>
+              <td>${dvd.classificacao.descricao}</td>
+              <td>${dvd.anoLancamento}</td>
+              <td>${dvd.duracaoMinutos}</td>
+              
               <td>
-                <a href="${cp}/${prefixo}Alteracao&id=${classificacao.idClassificacao}">
+                <a href="${cp}/${prefixo}Alteracao&id=${dvd.dvdID}">
                   Alterar
                 </a>
               </td>
               <td>
-                <a href="${cp}/${prefixo}Exclusao&id=${classificacao.idClassificacao}">
+                <a href="${cp}/${prefixo}Exclusao&id=${dvd.dvdID}">
                   Excluir
                 </a>
               </td>
@@ -65,13 +82,8 @@
         
           </tbody>
         </table>
-        
-        <a href="${cp}/classificacao_etaria/cadastroClassificacao.jsp" 
-           class="link-button" 
-           style="width: inherit; text-align: center"
+        <a href="${cp}/dvd/cadastroDvd.jsp" class="link-button" style="width: inherit; text-align: center">Novo Dvd</a
         >
-            Nova Classificação
-        </a>
       </div>
     </main>
 

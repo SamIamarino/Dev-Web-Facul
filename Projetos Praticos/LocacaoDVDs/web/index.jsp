@@ -12,10 +12,12 @@
   <body>
     <header class="header">
       <nav>
-        <img src="./assets/logo-removebg-preview.png" alt="Logo" class="logo" />
+        <a href="${cp}/index.jsp">
+            <img src="${cp}/assets/logo-removebg-preview.png" alt="Logo" class="logo" />
+          </a>
         <ul>
           <li><a href="${cp}/ator/listagemAtor.jsp" class="nav-link">Ator</a></li>
-          <li><a href="#" class="nav-link">Dvd</a></li>
+          <li><a href="${cp}/dvd/listagemDvd.jsp" class="nav-link">Dvd</a></li>
           <li><a href="${cp}/genero/listagemGenero.jsp" class="nav-link">Genero</a></li>
           <li><a href="${cp}/classificacao_etaria/listagemClassificacao.jsp" class="nav-link">Classificação</a></li>
         </ul>
@@ -37,7 +39,7 @@
         <div class="header-body">
           <h2>Star copy, seu sistema de cadastro de Dvds!</h2>
           <p>A seguir selecione o que você quer cadastrar:</p>
-          <a href="#" class="link-button">Cadastre seu DVD.</a>
+          <a href="${cp}/dvd/cadastroDvd.jsp" class="link-button">Cadastre seu DVD.</a>
           <a href="${cp}/ator/cadastroAtor.jsp" class="link-button">Atores</a>
           <a href="${cp}/genero/cadastroGenero.jsp" class="link-button">Gênero.</a>
           <a href="${cp}/classificacao_etaria/cadastroClassificacao.jsp" class="link-button">Classificação Etária</a>

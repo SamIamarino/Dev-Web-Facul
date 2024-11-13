@@ -63,14 +63,26 @@
             scope="page"
             class="locacaodvds.servicos.DvdServicos"
         />
-            
-          <h3>Algumas cópias suas cadastradas:</h3>
+        
+        <c:choose>
+            <c:when test="${servicos.todos.size() == 0}">
+                
+                <h3>Nenhuma cópia cadastrada:</h3>
+                <img src="${cp}/assets/deathStar.png" alt="DeathStarImage" style="margin:auto"/>
+                     
+            </c:when>
+                     
+            <c:otherwise>
+                
+                <h3>Algumas cópias suas cadastradas:</h3>
 
-          <c:forEach items="${servicos.todos}" var="dvd" >
-            <a href="#" class="link-button">${dvd.titulo}</a>
-          </c:forEach>
-          
-          
+                <c:forEach items="${servicos.todos}" var="dvd" >
+                  <a href="#" class="link-button">${dvd.titulo}</a>
+                </c:forEach>
+                  
+            </c:otherwise>
+        </c:choose>
+        
         </div>
       </div>
     </main>

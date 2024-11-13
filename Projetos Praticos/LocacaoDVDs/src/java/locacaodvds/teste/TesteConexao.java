@@ -7,12 +7,16 @@ package locacaodvds.teste;
 import java.sql.Connection;
 import java.sql.SQLException;
 import locacaodvds.jbdc.ConnectionFactory;
+import locacaodvds.servicos.AtorServicos;
 /**
  *
  * @author Samuel Iamarino
  */
 public class TesteConexao {
     public static void main(String[] args) {
+        
+        AtorServicos servico = new AtorServicos();
+        
         try{
             
             Connection conexao = ConnectionFactory.getConnection();

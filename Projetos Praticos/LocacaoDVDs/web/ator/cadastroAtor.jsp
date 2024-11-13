@@ -12,10 +12,12 @@
   <body>
     <header class="header">
       <nav>
-        <img src="..${cp}/assets/logo-removebg-preview.png" alt="Logo" class="logo" />
+        <a href="${cp}/index.jsp">
+            <img src="${cp}/assets/logo-removebg-preview.png" alt="Logo" class="logo" />
+          </a>
         <ul>
           <li><a href="${cp}/ator/listagemAtor.jsp" class="nav-link">Ator</a></li>
-          <li><a href="#" class="nav-link">Dvd</a></li>
+          <li><a href="${cp}/dvd/listagemDvd.jsp" class="nav-link">Dvd</a></li>
           <li><a href="${cp}/genero/listagemGenero.jsp" class="nav-link">Genero</a></li>
           <li><a href="${cp}/classificacao_etaria/listagemClassificacao.jsp" class="nav-link">Classificação</a></li>
         </ul>

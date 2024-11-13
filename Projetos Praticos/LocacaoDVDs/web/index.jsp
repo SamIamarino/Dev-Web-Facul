@@ -87,6 +87,8 @@
       </div>
     </main>
 
-    <footer></footer>
+        <footer class="header" style="position: fixed; bottom: 0; width: 100%; text-align: center; color: white;">
+            <p style="margin: auto">&copy; 2024 StarCopy</p>
+        </footer>
   </body>
 </html>

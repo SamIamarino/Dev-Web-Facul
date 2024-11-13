@@ -31,7 +31,7 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Nome</th>
+              <th>Descrição</th>
               <th>Alterar</th>
               <th>Excluir</th>
             </tr>

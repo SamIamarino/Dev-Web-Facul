@@ -9,6 +9,7 @@
 */
 
 body {
+  height: 1080px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -85,7 +86,7 @@ ul li {
 main {
   display: flex;
   justify-content: space-around;
-  margin: 12.12vh 35.33vh;
+  margin: 12.12vh 50%;
 }
 
 .main-container {
@@ -152,7 +153,6 @@ main {
 }
 
 @media (max-width: 780px) {
-  /* Estilos para telas menores que 480px */
   ul {
     display: flex;
     justify-content: center;

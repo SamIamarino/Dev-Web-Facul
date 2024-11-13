@@ -62,7 +62,7 @@
                 <option></option>
                 <c:forEach items="${atorServicos.todos}" var="ator">
                 <option value="${ator.idAtor}">
-                  ${ator.nome}
+                  ${ator.nome} ${ator.sobrenome}
                 </option>
               </c:forEach>
             </select>
@@ -72,7 +72,7 @@
               <option></option>
                 <c:forEach items="${atorServicos.todos}" var="ator">
                 <option value="${ator.idAtor}">
-                  ${ator.nome}
+                  ${ator.nome} ${ator.sobrenome}
                 </option>
               </c:forEach>
             </select>

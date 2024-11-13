@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="cp" value="${pageContext.request.contextPath}"/>
 <c:set var="prefixo" value="processaDvd?acao=preparar"/>
 <!DOCTYPE html>
@@ -54,13 +55,18 @@
         
         <c:forEach items="${servicos.todos}" var="dvd">
             
+            <fmt:formatDate 
+                pattern="dd-MM-yyyy"
+                value="${dvd.dataLancamento}"
+                var="data" scope="page"/>
+            
             <tr>
               <td>${dvd.dvdID}</td>
               <td>${dvd.titulo}</td>
               <td>${dvd.atorPrincipal.nome} ${dvd.atorPrincipal.sobrenome}</td>
               <!-- Usar o formatter dps -->
               <td>${dvd.atorCoadjuvante.nome} ${dvd.atorCoadjuvante.sobrenome}</td>
-              <td>${dvd.dataLancamento}</td>
+              <td>${data}</td>
               <td>${dvd.genero.descricao}</td>
               <td>${dvd.classificacao.descricao}</td>
               <td>${dvd.anoLancamento}</td>

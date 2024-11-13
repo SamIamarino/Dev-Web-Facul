@@ -85,7 +85,7 @@ ul li {
 
 main {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 12.12vh 35.33vh;
 }
 

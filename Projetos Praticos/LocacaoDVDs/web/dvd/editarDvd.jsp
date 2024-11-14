@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Star Copy</title>
-    <link rel="stylesheet" href="${cp}/dvd/dvdStyle.css" />
+    <link rel="stylesheet" href="${cp}/css/dvdStyle.css" />
   </head>
   <body>
     <header class="header">

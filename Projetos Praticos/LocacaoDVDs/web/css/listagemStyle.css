@@ -122,7 +122,7 @@ main {
   padding-right: 10px;
 }
 
-.link-button {
+.link-button{
   font-family: "Oxanium", sans-serif;
   font-weight: 900;
   display: block;
@@ -134,13 +134,12 @@ main {
   transition: 0.3s;
   margin-top: 10px;
 }
-.link-button:hover {
+.link-button:hover{
   color: #f2f2f2;
+  border: 1px solid #f2f2f2;
   background-color: #363636;
   box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.336);
 }
-
-/* Table css */
 
 /*
 #F2F2F2 --> Branco StormStrooper

@@ -43,15 +43,25 @@ public class ClassificacaoServlet extends HttpServlet {
             if(acao.equals("inserir")){
                 
                 String descricao = request.getParameter("descricaoClassificacao");
-                ClassificacaoEtaria classificacao = new ClassificacaoEtaria();
                 
-                classificacao.setDescricao(descricao);
-                
-                dao.salvar(classificacao);
-                
-                disp = request.getRequestDispatcher(
-                        "/classificacao_etaria/listagemClassificacao.jsp"
-                );
+                if( descricao.isBlank() ){
+                    
+                    disp = request.getRequestDispatcher(
+                        "/formularioErro.jsp"
+                    );
+                    
+                }else{
+                    
+                    ClassificacaoEtaria classificacao = new ClassificacaoEtaria();
+
+                    classificacao.setDescricao(descricao);
+
+                    dao.salvar(classificacao);
+
+                    disp = request.getRequestDispatcher(
+                            "/classificacao_etaria/listagemClassificacao.jsp"
+                    );
+                }
                         
             } else if(acao.equals("alterar")){
                 

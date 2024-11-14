@@ -46,17 +46,29 @@ public class AtorServlet extends HttpServlet {
                 String sobrenome = request.getParameter("sobrenomeAtor");
                 Date dataEstreia = Date.valueOf(request.getParameter("dataEstreia"));
                 
-                Ator ator = new Ator();
+                if( nome.isBlank() || sobrenome.isBlank() ){
                 
-                ator.setNome(nome);
-                ator.setSobrenome(sobrenome);
-                ator.setDataEstreia(dataEstreia);
+                    disp = request.getRequestDispatcher(
+                        "/formularioErro.jsp"
+                    );
+                    
+                }else{
+                    
+                    Ator ator = new Ator();
+
+                    ator.setNome(nome);
+                    ator.setSobrenome(sobrenome);
+                    ator.setDataEstreia(dataEstreia);
+
+                    dao.salvar(ator);
+
+                    disp = request.getRequestDispatcher(
+                            "/ator/listagemAtor.jsp"
+                    );
+                    
+                }
                 
-                dao.salvar(ator);
                 
-                disp = request.getRequestDispatcher(
-                        "/ator/listagemAtor.jsp"
-                );
                 
             } else if(acao.equals("alterar")){
                 

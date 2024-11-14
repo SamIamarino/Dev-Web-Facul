@@ -44,15 +44,23 @@ public class GeneroServlet extends HttpServlet {
             if(acao.equals("inserir")){
                 
                 String descricao = request.getParameter("descricaoGenero");
-                Genero genero = new Genero();
                 
-                genero.setDescricao(descricao);
+                if( descricao.isBlank() ){   
+                    disp = request.getRequestDispatcher(
+                        "/formularioErro.jsp"
+                    );
+                    
+                }else{
+                    Genero genero = new Genero();
                 
-                dao.salvar(genero);
-                
-                disp = request.getRequestDispatcher(
-                        "/genero/listagemGenero.jsp"
-                );   
+                    genero.setDescricao(descricao);
+
+                    dao.salvar(genero);
+
+                    disp = request.getRequestDispatcher(
+                            "/genero/listagemGenero.jsp"
+                    );
+                }
             }else if(acao.equals("alterar")){
                 
                 int id = Integer.parseInt(request.getParameter("id"));

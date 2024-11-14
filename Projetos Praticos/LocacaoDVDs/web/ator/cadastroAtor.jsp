@@ -38,16 +38,16 @@
         </div>
         <div class="header-body">
           <form action="${cp}/processaAtor" method="post">
-            <input type="hidden" name="acao" value="inserir" />
+              <input type="hidden" name="acao" value="inserir"/>
 
             <label>Nome: </label>
-            <input type="text" name="nomeAtor" class="form-input" />
+            <input type="text" name="nomeAtor" class="form-input" required/>
 
             <label>Sobrenome: </label>
-            <input type="text" name="sobrenomeAtor" class="form-input" />
+            <input type="text" name="sobrenomeAtor" class="form-input" required/>
 
             <label>Data Estreia: </label>
-            <input type="date" name="dataEstreia" class="form-input" />
+            <input type="date" name="dataEstreia" class="form-input" required/>
 
             <input type="submit" class="form-input-submit" value="Cadastrar" />
           </form>
@@ -55,6 +55,6 @@
       </div>
     </main>
 
-    <footer></footer>
+    
   </body>
 </html>

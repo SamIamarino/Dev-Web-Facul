@@ -47,7 +47,7 @@
       </div>
       <div class="main-container scroll">
         <div class="header-container">
-          <h1>Copias Cadastradas:</h1>
+          <h1>Cópias Cadastradas:</h1>
           <hr
             style="
               height: 10px;
@@ -77,7 +77,7 @@
                 <h3>Algumas cópias suas cadastradas:</h3>
 
                 <c:forEach items="${servicos.todos}" var="dvd" >
-                  <a href="#" class="link-button">${dvd.titulo}</a>
+                  <a href="${cp}/dvd/listagemDvd.jsp" class="link-button">${dvd.titulo}</a>
                 </c:forEach>
                   
             </c:otherwise>

@@ -38,19 +38,19 @@
         </div>
         <div class="header-body">
           <form action="${cp}/processaDvd" method="post">
-            <input type="hidden" name="acao" value="inserir" />
+            <input type="hidden" name="acao" value="inserir"/>
 
             <label>Título: </label>
-            <input type="text" name="nomeDvd" class="form-input" />
+            <input type="text" name="nomeDvd" class="form-input" required/>
 
             <label>Ano Lancamento: </label>
-            <input type="text" name="anoLancamentoDvd" class="form-input" />
+            <input type="text" name="anoLancamentoDvd" class="form-input" required/>
 
             <label>Data Lançamento: </label>
-            <input type="date" name="dataLancamentoDvd" class="form-input" />
+            <input type="date" name="dataLancamentoDvd" class="form-input" required/>
 
             <label>Duração(Min): </label>
-            <input type="text" name="duracaoDvd" class="form-input" />
+            <input type="text" name="duracaoDvd" class="form-input"required />
 
             <jsp:useBean 
                 id="atorServicos" 
@@ -58,7 +58,7 @@
                 class="locacaodvds.servicos.AtorServicos"/>
             
             <label>Ator Principal: </label>
-            <select name="atorPrincipalDvd" class="form-input">
+            <select name="atorPrincipalDvd" class="form-input" required>
                 <option></option>
                 <c:forEach items="${atorServicos.todos}" var="ator">
                 <option value="${ator.idAtor}">
@@ -68,7 +68,7 @@
             </select>
             
             <label>Ator Coadjuvante: </label>
-            <select name="atorQuadjuvante" class="form-input">
+            <select name="atorQuadjuvante" class="form-input" required>
               <option></option>
                 <c:forEach items="${atorServicos.todos}" var="ator">
                 <option value="${ator.idAtor}">
@@ -83,7 +83,7 @@
                 class="locacaodvds.servicos.GeneroServicos"/>
             
             <label>Genero: </label>
-            <select name="generoDvd" class="form-input">
+            <select name="generoDvd" class="form-input" required>
               <option></option>
                 <c:forEach items="${generoServicos.todos}" var="genero">
                 <option value="${genero.idGenero}">
@@ -98,7 +98,7 @@
                 class="locacaodvds.servicos.ClassificacaoServicos"/>
             
             <label>Classificação Etária: </label>
-            <select name="classificacaoDvd" class="form-input">
+            <select name="classificacaoDvd" class="form-input" required>
               <option></option>
                 <c:forEach items="${classificacaoServicos.todos}" var="classificacao">
                 <option value="${classificacao.idClassificacao}">

@@ -46,6 +46,7 @@
               name="descricaoGenero"
               class="form-input"
               rows="20"
+              required
             ></textarea>
 
             <input type="submit" class="form-input-submit" value="Cadastrar" />
@@ -54,6 +55,6 @@
       </div>
     </main>
 
-    <footer></footer>
+   
   </body>
 </html>

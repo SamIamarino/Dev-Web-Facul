@@ -40,7 +40,7 @@
         <div class="header-body">
           
           <form action="${cp}/processaClassificacao" method="post">
-            <input type="hidden" name="acao" value="inserir" />
+            <input type="hidden" name="acao" value="inserir"/>
 
             <label>Descrição: </label>
 
@@ -49,6 +49,7 @@
               id="descricaoClassificacao"
               class="form-input"
               rows="20"
+              required
             ></textarea>
 
             <input type="submit" class="form-input-submit" value="Cadastrar" />
@@ -57,6 +58,6 @@
       </div>
     </main>
 
-    <footer></footer>
+    
   </body>
 </html>

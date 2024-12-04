@@ -1,0 +1,55 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 3 de dez. de 2024, 08:54:23
+    Author     : Samuel Iamarino
+*/
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: white;
+}
+
+.main{
+    display: flex;
+    gap:10vh;
+    margin: 200px;
+    justify-content: center;
+}
+
+.resposta{
+    width: 500px;
+    height: 620px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    overflow-y: scroll;
+}
+
+.dados{
+    border-bottom: 1px solid black;
+    margin-left: 5px;
+}
+
+.container-add{
+    width: 300px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.button{
+    border:none;
+    padding:8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;;
+}
+.button:hover{
+    background-color: gray;
+    color:beige;
+}
+

@@ -12,7 +12,7 @@ function criarFruta(event){
         },
         dataType: 'json'
         
-        }).done( (data, textStattus ) => {
+        }).done( (data, textStatus ) => {
             
             let $div = $( "#div-resposta" );
             $div.html( "" );

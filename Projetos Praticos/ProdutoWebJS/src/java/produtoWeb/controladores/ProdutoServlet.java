@@ -2,10 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package frutaWeb.controladores;
+package produtoWeb.controladores;
 
-import frutaWeb.entidades.Fruta;
-import frutaWeb.dao.FrutaDAO;
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
 import java.io.IOException;
@@ -15,15 +13,18 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.sql.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import produtoWeb.dao.ProdutoDAO;
+import produtoWeb.entidades.Produto;
+
 /**
  *
  * @author Samuel Iamarino
  */
-@WebServlet(name = "FrutaServlet", urlPatterns = {"/frutaServlet"})
-public class FrutaServlet extends HttpServlet {
+@WebServlet(name = "ProdutoServlet", urlPatterns = {"/listarProdutos"})
+public class ProdutoServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,48 +39,50 @@ public class FrutaServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType( "application/json;charset=UTF-8" );
         
-        FrutaDAO dao = null;
+        ProdutoDAO dao = null;
+        List<Produto> produtos = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
-        List<Fruta> frutas = new ArrayList<>();
         Jsonb jb = JsonbBuilder.create();
         
-        String nome = request.getParameter("nome");
-        String cor = request.getParameter("cor");
+        
+        String descricao = request.getParameter("descricao");
+        int quantidade = Integer.parseInt(request.getParameter("quantidade"));
         
         try{
-        //Salvando no banco    
-        dao = new FrutaDAO();
-        
-        Fruta fruta = new Fruta();
-        fruta.setNome(nome);
-        fruta.setCor(cor);
-        
-        dao.salvar(fruta);
-        
-        
-        //For fazendo lista para mandar no JSON para ser consumido no front-end 
-        for( Fruta frutasPonteiro : dao.listarTodos()){
             
-            Fruta frutaTemp = new Fruta();
-            frutaTemp.setIdFruta(frutasPonteiro.getIdFruta());
-            frutaTemp.setNome(frutasPonteiro.getNome());
-            frutaTemp.setCor(frutasPonteiro.getCor());
+            dao = new ProdutoDAO();
             
-            frutas.add(frutaTemp);
+            Produto produto = new Produto();
+            produto.setDescricao(descricao);
+            produto.setQuantidade(quantidade);
             
-        }
-        
-        try ( PrintWriter out = response.getWriter() ) {
-            out.print( jb.toJson( frutas ) );
-        }
-        
-        } catch (SQLException e){
+            dao.salvar(produto);
+            
+            for(Produto produtoPonteiro : dao.listarTodos()){
+                
+                Produto produtoTemp = new Produto();
+                
+                produtoTemp.setIdProduto(produtoPonteiro.getIdProduto());
+                produtoTemp.setDescricao(produtoPonteiro.getDescricao());
+                produtoTemp.setQuantidade(produtoPonteiro.getQuantidade());
+                
+                produtos.add(produtoTemp);
+                
+            }
+            
+            try ( PrintWriter out = response.getWriter() ) {
+                out.print( jb.toJson( produtos ) );
+            }
+            
+            
+            
+            
+        }catch(SQLException e){
             e.printStackTrace();
         }
         
         
         
-       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -118,7 +121,7 @@ public class FrutaServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "FrutaServlet";
+        return "Short description";
     }// </editor-fold>
 
 }

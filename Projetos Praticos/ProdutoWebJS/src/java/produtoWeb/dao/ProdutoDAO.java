@@ -2,74 +2,72 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package frutaWeb.dao;
+package produtoWeb.dao;
 
-import frutaWeb.entidades.Fruta;
-import java.sql.SQLException;
-import java.util.List;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
+import produtoWeb.entidades.Produto;
 
 /**
  *
  * @author Samuel Iamarino
  */
-public class FrutaDAO extends DAO<Fruta> {
-    
-   public FrutaDAO()throws SQLException{
-       
-   }
-   
+public class ProdutoDAO extends DAO<Produto>{
 
+    
+    public ProdutoDAO() throws SQLException{
+        
+    }
+    
     @Override
-    public void salvar(Fruta obj) throws SQLException {
+    public void salvar(Produto obj) throws SQLException {
        
         PreparedStatement statement = getConnection().prepareStatement(
                 """
-                INSERT INTO fruta (nome,cor) VALUES(?,?)
+                INSERT INTO produto(descricao,quantidade) VALUES (?,?);
                 """);
         
-        statement.setString(1, obj.getNome());
-        statement.setString(2,obj.getCor());
+        statement.setString(1, obj.getDescricao());
+        statement.setInt(2, obj.getQuantidade());
         
         statement.executeUpdate();
+        
         statement.close();
         
     }
 
     @Override
-    public void atualizar(Fruta obj) throws SQLException {
+    public void atualizar(Produto obj) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void excluir(Fruta obj) throws SQLException {
+    public void excluir(Produto obj) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public List<Fruta> listarTodos() throws SQLException {
+    public List<Produto> listarTodos() throws SQLException {
+       
+        List<Produto> lista = new ArrayList<>();
         
-        List<Fruta> lista = new ArrayList();
-        
-        PreparedStatement statement = getConnection().prepareStatement("""
-                    SELECT * FROM FRUTA;                                                   
-                                                                       
-                                                                       """);
-    
+        PreparedStatement statement = getConnection().prepareStatement(
+                """
+                SELECT * FROM produto;
+                """);
         
         ResultSet set = statement.executeQuery();
         
-        while(set.next()){
-           
-            Fruta fruta = new Fruta();
+        while( set.next() ){
             
-            fruta.setIdFruta(set.getInt("idfruta"));
-            fruta.setNome(set.getString("nome"));
-            fruta.setCor(set.getString("cor"));
+            Produto produto = new Produto();
             
-            lista.add(fruta);
+            produto.setIdProduto( set.getInt("idproduto"));
+            produto.setDescricao(set.getString("descricao"));
+            produto.setQuantidade(set.getInt("quantidade"));
             
+            lista.add(produto);
         }
         
         set.close();
@@ -77,11 +75,10 @@ public class FrutaDAO extends DAO<Fruta> {
         
         return lista;
     }
+
     @Override
-    public Fruta obterPorId(int id) throws SQLException {
+    public Produto obterPorId(int id) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
-  
     
 }

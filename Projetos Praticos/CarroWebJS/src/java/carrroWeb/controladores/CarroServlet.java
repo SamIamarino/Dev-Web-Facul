@@ -1,11 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
-package frutaWeb.controladores;
+package carrroWeb.controladores;
 
-import frutaWeb.entidades.Fruta;
-import frutaWeb.dao.FrutaDAO;
+import carroWeb.dao.CarroDAO;
+import carroWeb.entidades.Carro;
+import jakarta.json.JsonBuilderFactory;
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
 import java.io.IOException;
@@ -15,15 +12,15 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.*;
 /**
  *
  * @author Samuel Iamarino
  */
-@WebServlet(name = "FrutaServlet", urlPatterns = {"/frutaServlet"})
-public class FrutaServlet extends HttpServlet {
+@WebServlet(name = "CarroServlet", urlPatterns = {"/listarCarros"})
+public class CarroServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,48 +35,49 @@ public class FrutaServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType( "application/json;charset=UTF-8" );
         
-        FrutaDAO dao = null;
+        CarroDAO dao = null;
         StringBuilder sb = new StringBuilder();
-        List<Fruta> frutas = new ArrayList<>();
+        List<Carro> carros =  new ArrayList<>();
         Jsonb jb = JsonbBuilder.create();
         
         String nome = request.getParameter("nome");
-        String cor = request.getParameter("cor");
+        String modelo = request.getParameter("modelo");
+        int anoModelo = Integer.parseInt(request.getParameter("anoFabricacao"));
         
         try{
-        //Salvando no banco    
-        dao = new FrutaDAO();
         
-        Fruta fruta = new Fruta();
-        fruta.setNome(nome);
-        fruta.setCor(cor);
-        
-        dao.salvar(fruta);
-        
-        
-        //For fazendo lista para mandar no JSON para ser consumido no front-end 
-        for( Fruta frutasPonteiro : dao.listarTodos()){
+            dao = new CarroDAO();
             
-            Fruta frutaTemp = new Fruta();
-            frutaTemp.setIdFruta(frutasPonteiro.getIdFruta());
-            frutaTemp.setNome(frutasPonteiro.getNome());
-            frutaTemp.setCor(frutasPonteiro.getCor());
+            Carro carro = new Carro();
+            carro.setAnoModelo(anoModelo);
+            carro.setNome(nome);
+            carro.setModelo(modelo);
             
-            frutas.add(frutaTemp);
+            dao.salvar(carro);
             
-        }
-        
-        try ( PrintWriter out = response.getWriter() ) {
-            out.print( jb.toJson( frutas ) );
-        }
-        
-        } catch (SQLException e){
+            
+            //For fazendo carros para mandar no JSON para ser consumido no front-end 
+            for(Carro carroPonteiro: dao.listarTodos()){
+                
+                Carro carroTemp = new Carro();
+                carroTemp.setIdCarro(carroPonteiro.getIdCarro());
+                carroTemp.setNome(carroPonteiro.getNome());
+                carroTemp.setModelo(carroPonteiro.getModelo());
+                carroTemp.setAnoModelo(carroPonteiro.getAnoModelo());
+                
+                carros.add(carroTemp);
+                
+            }
+            
+            try ( PrintWriter out = response.getWriter() ) {
+                out.print( jb.toJson( carros ) );
+            }
+            
+            
+        }catch(SQLException e){
             e.printStackTrace();
         }
         
-        
-        
-       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -118,7 +116,7 @@ public class FrutaServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "FrutaServlet";
+        return "Short description";
     }// </editor-fold>
 
 }

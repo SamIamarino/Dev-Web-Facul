@@ -25,6 +25,3 @@ O **Star Copy** é um CRUD completo desenvolvido como trabalho final da discipl
   <img src="docs/img/star-copy-demo.png" width="400"/>
 </p>
 
----
-
-> **Nota:** Este repositório é estritamente educacional; não há garantias de produção ou segurança avançada. Sinta‑se livre para clonar, estudar e melhorar!

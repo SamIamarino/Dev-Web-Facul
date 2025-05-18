@@ -22,6 +22,6 @@ O **Star Copy** é um CRUD completo desenvolvido como trabalho final da discipl
 
 <p align="center">
   <!-- substitua o caminho abaixo pela sua futura screenshot -->
-  <img src="docs/img/star-copy-demo.png" width="800"/>
+  <img src="docs/fotosReadme (1).png" width="800"/>
 </p>
 
